@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="style.css">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/b00f4cb08e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <header class="shadow-sm">
+        <h1>FL<span>color</span></h1>
+    </header>
+    <div class="container p-3">
+        <div class="row justify-content-between demo">
+            <label for="w-satu" class="col"><div class="satu">lorem 1</div></label>
+            <label for="w-dua" class="col"><div class="dua" >lorem 2</div></label>
+        </div>
+        <div class="row justify-content-between demo">
+            <label for="w-tiga" class="col"><div class="tiga">lorem 3</div></label>
+            <label for="w-empat" class="col"><div class="empat">lorem 4</div></label>
+        </div>
+            <p id="warnaBackground" class="text-center bg-info "></p>
+
+        <!-- start control -->
+        <div class="control ">
+            <div class="row justify-content-between">
+                <div class="col-4">
+                    <label for="w-satu">lorem 1</label>
+                    <input type="color" class="warna" id="w-satu" value="#ffffff">
+                </div>
+                <div class="col-4">
+                    <label for="w-dua">lorem 2</label>
+                    <input type="color" class="warna" id="w-dua" value="#ffffff">
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-4">
+                    <label for="w-tiga">lorem 3</label>
+                    <input type="color" class="warna" id="w-tiga" value="#ffffff">
+                </div>
+                <div class="col-4">
+                    <label for="w-empat">lorem 4</label>
+                    <input type="color" class="warna" id="w-empat" value="#ffffff">
+                </div>
+            </div>
+            <div class="text-center ">
+                <button type="button" id="tombolAcak" class="btn btn-primary my-2">Acak warna Background</button>
+            </div>
+        </div>
+        <!-- end control -->
+
+        <!-- star control slider -->
+            <div class="control2     text-center bg-success ">
+                <label for="wc2-red">Red</label>
+                <input type="range" class="warna" id="wc2-red" min="0" max="255" value="224">
+                <br>
+                <label for="wc2-green">Green</label>
+                <input type="range" class="warna" id="wc2-green"  min="0" max="255" value="255">
+                <br>
+                <label for="wc2-blue">Blue</label>
+                <input type="range" class="warna" id="wc2-blue" min="0" max="255" value="255">   
+                <br>
+                <label for="wc2-t">Transparent</label>
+                <input type="number" class="warna" id="wc2-t" min="0.1" max="1" step="0.1" value="1">
+            </div>
+        <!-- end control slider -->
+    </div>
+<script src="GG.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>
