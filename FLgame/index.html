@@ -1,24 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="b.css">
-</head>
-<body onkeypress="myFunction()">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLgame</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="b.css" />
+    <script
+      src="https://kit.fontawesome.com/b00f4cb08e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body onkeypress="myFunction()">
     <header>
-        <h1>FL<span>game</span></h1>
+      <h1>FL<span>game</span></h1>
     </header>
     <h2>Avoid the red block</h2>
     <div id="game">
-        <div id="a"></div>
-        <div id="b"></div>
+      <audio src="Audio/Bg.mp3" id="soundBg" loop></audio>
+      <div id="a"></div>
+      <div class="menu">
+        <button class="btn-play animate__animated animate__zoomInDown">
+          <i class="fa fa-play" aria-hidden="true"></i>
+        </button>
+        <button
+          class="btn-music animate__animated animate__backInRight"
+          onclick="playSoundBg()"
+        >
+          <i class="fa fa-music" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="b"></div>
     </div>
     <footer>
-        <button class="btn" onclick="turnLeft()">Left</button>
-        <button class="btn" onclick="turnRight()">Right</button>
+      <button
+        class="btn animate__animated animate__flipInX animate__delay-2s"
+        onclick="turnLeft()"
+      >
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
+      <button
+        class="btn animate__animated animate__flipInX animate__delay-2s"
+        onclick="turnRight()"
+      >
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </button>
     </footer>
-</body>
-<script src="b.js"></script>
+  </body>
+  <script src="b2.js"></script>
 </html>
