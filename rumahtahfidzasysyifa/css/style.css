@@ -1,0 +1,19 @@
+body{
+    font-family: "kalam"
+}
+.carousel-item{
+    width: 100%;
+    height: 100vh;
+}
+.carousel-item img{
+    width: 100%;
+}
+.motto-item{
+    height: 15vh;
+}
+.sambutan{
+    height: 70vh;
+}
+.sambutan img{
+    height: 100%;
+}

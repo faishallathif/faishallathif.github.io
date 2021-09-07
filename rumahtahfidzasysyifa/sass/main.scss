@@ -1,0 +1,22 @@
+// custom variables
+$primary: #BBBEFF;
+$dark :#121924;
+$body-color:$dark;
+$link-color:$primary;
+$list-group-bg:$primary;
+$card-bg:$primary;
+$nav-link-color:$dark;
+
+// custom navbar theme
+$navbar-dark-color:                 $dark;
+$navbar-dark-hover-color:           rgba($dark, .75);
+$navbar-dark-active-color:          $dark;
+$navbar-dark-disabled-color:        rgba($dark, .25);
+$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-dark-toggler-border-color:  rgba($dark, .1);
+
+// $custom-theme-colors:(
+//     "altdark":;
+// )
+// import bootstrap
+@import '../scss/bootstrap';
