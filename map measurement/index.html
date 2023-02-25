@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Measurement | Faishal Lathif</title>
+    <!-- icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/site.webmanifest" />
+    <!-- font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gokertanrisever/leaflet-ruler@master/src/leaflet-ruler.css"
+        integrity="sha384-P9DABSdtEY/XDbEInD3q+PlL+BjqPCXGcF8EkhtKSfSTr/dS5PBKa9+/PMkW2xsY" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/gokertanrisever/leaflet-ruler@master/src/leaflet-ruler.js"
+        integrity="sha384-N2S8y7hRzXUPiepaSiUvBH1ZZ7Tc/ZfchhbPdvOE5v3aBBCIepq9l+dBJPFdo1ZJ"
+
+        crossorigin="anonymous"></script> -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--css sidebar  -->
+    <link rel="stylesheet" href="css/leaflet-sidebar.css" />
+    <!-- own css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- sidebar -->
+    <div id="sidebar" class="leaflet-sidebar collapsed">
+      <!-- nav tabs -->
+      <div class="leaflet-sidebar-tabs">
+        <!-- top aligned tabs -->
+        <ul role="tablist">
+          <li>
+            <a href="#home" role="tab"><i class="fa fa-bars active"></i></a>
+          </li>
+          <li>
+            <a href="#palette" role="tab"
+              ><i class="fa fa-palette active"></i
+            ></a>
+          </li>
+        </ul>
+
+        <!-- bottom aligned tabs -->
+        <ul role="tablist">
+          <li>
+            <a href="https://faishallathif.github.io/map measurement"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- panel content -->
+      <div class="leaflet-sidebar-content">
+        <div class="leaflet-sidebar-pane" id="home">
+          <div id="form-container">
+            <form id="form">
+              <div id="inputs-container"></div>
+              <button
+                type="button"
+                onclick="addInput()"
+                class="p-2 bg-green-400 mb-3"
+              >
+                Tambah Koordinat
+              </button>
+
+              <div class="flex gap-x-5">
+                <button type="submit" class="p-2 bg-green-400">Submit</button>
+                <button type="reset" class="p-2">
+                  <span
+                    class="underline decoration-green-400 decoration-2 rounded p-2 hover:bg-green-400 hover:text-white"
+                    >Reset</span
+                  >
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="leaflet-sidebar-pane" id="palette">
+          <div id="form-container">
+            <form id="form">
+              <label for="">Warna Garis</label>
+              <input
+                type="color"
+                name="color"
+                id="input-color"
+                value="#ff0000"
+              />
+            </form>
+          </div>
+        </div>
+
+        <div class="leaflet-sidebar-pane" id="messages">
+          <h1 class="leaflet-sidebar-header">
+            Messages<span class="leaflet-sidebar-close"
+              ><i class="fa fa-caret-left"></i
+            ></span>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- end sidebar -->
+    <div id="map"></div>
+    <script src="js/leaflet-sidebar.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
