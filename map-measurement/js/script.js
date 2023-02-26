@@ -28,30 +28,30 @@ function addInputHTML(
   <input type="text" name="koordinat[]" placeholder="koordinat ${i}" value="${koordinat}"  required/>
 
   <div class="flex justify-between mb-5">
-    <input type="radio" id="iRadioAuto" name="direction${i}" required value="auto" ${
+    <input type="radio" id="iRadioAuto${i}" name="direction${i}" required value="auto" ${
     direction == "auto" ? "checked" : ""
   }>
-    <label for="iRadioAuto">Auto</label><br>
-    <input type="radio" id="iRadioLeft" name="direction${i}" required value="left" ${
+    <label for="iRadioAuto${i}">Auto</label><br>
+    <input type="radio" id="iRadioLeft${i}" name="direction${i}" required value="left" ${
     direction == "left" ? "checked" : ""
   }>
-    <label for="iRadioLeft">Left</label><br>
-    <input type="radio" id="iRadioRight" name="direction${i}" required value="right" ${
+    <label for="iRadioLeft${i}">Left</label><br>
+    <input type="radio" id="iRadioRight${i}" name="direction${i}" required value="right" ${
     direction == "right" ? "checked" : ""
   }>
-    <label for="iRadioRight">Right</label><br>  
-    <input type="radio" id="iRadioCenter" name="direction${i}" required value="center" ${
+    <label for="iRadioRight${i}">Right</label><br>  
+    <input type="radio" id="iRadioCenter${i}" name="direction${i}" required value="center" ${
     direction == "center" ? "checked" : ""
   }>
-    <label for="iRadioCenter">Center</label><br>
-    <input type="radio" id="iRadioTop" name="direction${i}" required value="top"" ${
+    <label for="iRadioCenter${i}">Center</label><br>
+    <input type="radio" id="iRadioTop${i}" name="direction${i}" required value="top"" ${
     direction == "top" ? "checked" : ""
   }>
-    <label for="iRadioTop">Top</label><br>  
-    <input type="radio" id="iRadioBottom" name="direction${i}" required value="bottom" ${
+    <label for="iRadioTop${i}">Top</label><br>  
+    <input type="radio" id="iRadioBottom${i}" name="direction${i}" required value="bottom" ${
     direction == "bottom" ? "checked" : ""
   }>
-    <label for="iRadioBottom">Bottom</label><br> 
+    <label for="iRadioBottom${i}">Bottom</label><br> 
   </div>
 
     ${
@@ -84,18 +84,34 @@ function submit() {
   let inputKeterangan = document.getElementsByName("keterangan[]");
   let inputKoordinat = document.getElementsByName("koordinat[]");
   let inputDirection = document.querySelectorAll('input[type="radio"]:checked');
-  console.log(inputDirection);
-  reset(true);
-  console.log(inputData);
-  for (var i = 0; i < inputKeterangan.length; i++) {
-    inputData.push({
-      keterangan: inputKeterangan[i].value,
-      koordinat: inputKoordinat[i].value.split(","),
-      direction: inputDirection[i].value,
-    });
+  let isValidate;
+
+  for (let i = 0; i < inputKoordinat.length; i++) {
+    let koordinat = inputKoordinat[i].value.split(",");
+    if (koordinat.length > 2) {
+      console.log("koma lebih dari 1");
+      isValidate = false;
+      return false;
+    } else {
+      isValidate = true;
+    }
   }
-  console.log(inputData);
-  generate();
+  // console.log(inputDirection);
+  if (isValidate) {
+    reset(true);
+    // console.log(inputData);
+    for (var i = 0; i < inputKeterangan.length; i++) {
+      inputData.push({
+        keterangan: inputKeterangan[i].value,
+        koordinat: inputKoordinat[i].value.split(","),
+        direction: inputDirection[i].value,
+      });
+    }
+    generate();
+  } else {
+    return false;
+    // console.log(inputData);
+  }
 }
 
 //leaflet
