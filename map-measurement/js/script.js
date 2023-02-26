@@ -25,33 +25,47 @@ function addInputHTML(
   newInput.innerHTML = `
   ${i == 1 ? "<p class='mb-2'>Center Koordinat</p>" : ""}
   <input type="text" name="keterangan[]" placeholder="Keterangan ${i}" value="${keterangan}"  required/>
-  <input type="text" name="koordinat[]" placeholder="koordinat ${i}" value="${koordinat}"  required/>
-
-  <div class="flex justify-between mb-5">
+  <div>
+    <input type="text" name="koordinat[]" placeholder="koordinat ${i}" value="${koordinat}" oninput="validateInput(this)" required/>
+    <div class="error-message text-red-400 drop-shadow-lg mb-5"></div>
+  </div>
+  <div class="flex flex-wrap justify-center mb-5">
+  <div class="flex items-center gap-x-2">
     <input type="radio" id="iRadioAuto${i}" name="direction${i}" required value="auto" ${
     direction == "auto" ? "checked" : ""
   }>
     <label for="iRadioAuto${i}">Auto</label><br>
+    </div>
+    <div class="flex items-center gap-x-2">
     <input type="radio" id="iRadioLeft${i}" name="direction${i}" required value="left" ${
     direction == "left" ? "checked" : ""
   }>
     <label for="iRadioLeft${i}">Left</label><br>
+    </div>
+    <div class="flex items-center gap-x-2">
     <input type="radio" id="iRadioRight${i}" name="direction${i}" required value="right" ${
     direction == "right" ? "checked" : ""
   }>
     <label for="iRadioRight${i}">Right</label><br>  
+    </div>
+    <div class="flex items-center gap-x-2">
     <input type="radio" id="iRadioCenter${i}" name="direction${i}" required value="center" ${
     direction == "center" ? "checked" : ""
   }>
     <label for="iRadioCenter${i}">Center</label><br>
+    </div>
+    <div class="flex items-center gap-x-2">
     <input type="radio" id="iRadioTop${i}" name="direction${i}" required value="top"" ${
     direction == "top" ? "checked" : ""
   }>
     <label for="iRadioTop${i}">Top</label><br>  
+    </div>
+    <div class="flex items-center gap-x-2">
     <input type="radio" id="iRadioBottom${i}" name="direction${i}" required value="bottom" ${
     direction == "bottom" ? "checked" : ""
   }>
     <label for="iRadioBottom${i}">Bottom</label><br> 
+    </div>
   </div>
 
     ${
@@ -66,6 +80,22 @@ function addInputHTML(
 function deleteInput(button) {
   var inputWrapper = button.parentElement;
   inputWrapper.remove();
+}
+
+function validateInput(el) {
+  let teks = el.value.split(",");
+  let errorMsg = el.parentNode.querySelector(".error-message");
+  if (teks.length > 2) {
+    el.classList.add("border-2", "border-red-400");
+    errorMsg.innerText =
+      "Koordinat tidak valid. Harus terdiri dari dua angka yang dipisahkan oleh koma. Selain pemisah gunakan titik untuk koma ";
+    isValidate = false;
+    return false;
+  } else {
+    el.classList.remove("border-2", "border-red-400");
+    errorMsg.innerText = "";
+    isValidate = true;
+  }
 }
 
 let form = document.getElementById("form");
